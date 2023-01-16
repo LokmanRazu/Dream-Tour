@@ -16,6 +16,10 @@ const placeRouter = require('./routes/placesRoutes')
 
 app.use('/api/v1',placeRouter)
 
+app.get('/',(req,res)=>{
+    res.send('hello')
+})
+
 app.all('*',(req,res,next)=>{
     res.status(404).json({
         status:'fail',
