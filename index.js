@@ -6,7 +6,8 @@ const cors = require('cors');
 const dotenv = require('dotenv')
 dotenv.config({path:'./config.env'});
 
-
+const app = express();
+app.use(express.json())
 
 
 app.use(cors({
@@ -14,8 +15,7 @@ app.use(cors({
 }));
 
 
-const app = express();
-app.use(express.json())
+
 
 // Import Routes
 const placeRouter = require('./routes/placesRoutes')
